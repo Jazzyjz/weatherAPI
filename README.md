@@ -1,2 +1,0 @@
-# weatherAPI
-Weather Outlook

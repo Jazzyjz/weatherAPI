@@ -1,0 +1,41 @@
+h1{
+    font-size: large;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding: 40px;
+    text-align: center;
+    color: aliceblue;
+    background-image: linear-gradient( #354f52,#84A98c);
+}
+#forminput{
+    padding-left:30px;
+    padding-right: 10px;
+}
+aside{
+    float: left;
+    padding-right: 10px;
+}
+div.row{
+    display: flex;
+    padding: 20px;
+    padding-right: 200px;
+    padding-top: 60px;
+}
+
+#inputCity{
+    background-color: #A3B18A;
+}
+div#current.card{
+    max-width: 50%;
+    background-color: #cad2c5;
+}
+div.card{
+    text-align: center;
+    background-color: #cad2c5;
+}
+#container{
+    display: flex;
+}
+.btn{
+background-color: #588157;
+}
+
