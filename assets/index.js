@@ -82,8 +82,7 @@ var getApi = function(city){
     //day 1
     
      icon1.innerHTML =  "http://openweathermap.org/img/w/" + data.list[7].weather[0].icon + ".png' alt='Icon depicting current weather.'>";
-
-    
+     
     var d1 = document.createElement('p');
     d1.textContent = data.list[7].dt_txt;
     head1.append(d1);
