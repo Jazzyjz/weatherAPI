@@ -10,6 +10,8 @@ Users are also able to view future weather conditions for that city.
 ## Usage
 Simply type in the city you would like a forecast for and press the search button, you will then be presented with a future and current forecast of that city.
 
+# Preview
+
 ![Dashboard](images/wdashboard1.png)
 ![results](images/wdashboard2.png)
 
