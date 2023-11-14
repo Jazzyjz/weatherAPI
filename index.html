@@ -1,99 +1,55 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-    crossorigin="anonymous"
-  />
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"
-  ></script>
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-  />
-  <link rel="stylesheet" type="text/css" href="assets/style.css" />
-  <title>API Weather</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2f8e9dc640.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Weather Dashboard</title>
 </head>
 
 <body>
-  <!-- page title-->
-  <head>
-    <h1>WEATHER FORECAST</h1>
-  </head>
+      <header>
+        <h1>Weather Dashboard</h1>
+    </header>
 
-  <!-- aside city search -->
-  <aside id="forminput">
-    <form id="cityForm">
-      <div class="mb-3">
-        <label for="inputCity" class="form-label">City</label>
-        <input type="city" class="form-control" id="inputCity" aria-describedby="cityHelp">
-        <div id="cityHelp" class="form-text">Please Enter a Valid City</div>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-  </aside>
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3">
+                <form class="city-search">
+                    <h2>Search for a City:</h2>
+                    <input class="form-control mb-3" id="city-input" type="text" placeholder="New York"/>
+                    <button class="btn btn-primary form-control" id="search-btn" type="submit" >Search</button>
+                </form>
+                <div id="search-history"></div>
+            </div>
 
-  <!--Current day forecast display-->
+            <div class="col-lg-9">
+                <div class="row">
+                    <div class="col-lg-11 card d-none" id="todays-weather">
+                        <h3 id="city-name-date"></h3>
+                        <p id="weather-icon"></p>
+                        <p id="temperature"></p>
+                        <p id="wind"></p>
+                        <p id="humidity"></p>
+                    </div>
+                </div>
 
-    <div class="card text-center" id="current">
-      <div class="card-header" id="cityName">weather logo?</div>
-      <div class="card-body">
-        <h5 class="card-title">TODAY</h5>
-        <i id="tIcon"></i>
-        <p id= 'today' class="card-text"></p>
-      </div>
-      <div class="card-footer text-body-secondary"></div>
-    </div>
- 
+                <div class="row d-none" id="weekly-header">
+                    <div class="col-12">
+                        <h4>5-day Forecast:</h4>
+                    </div>
+                </div>
 
-  <!-- day forecast display -->
-  <div class="row">
-    <div class="col-sm-6 mb-3 mb-sm-0">
-      <div class="card" >
-        <div class="card-body">
-          <h5 class="card-title" id="this1">DAY</h5>
-          <i class="id1"></i>
-          <p class="card-texts" id="day1"></p>
-
+                <div class="row" id="weekly-forecast"></div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="col-sm-6 mb-3 mb-sm-0">
-      <div class="card" >
-        <div class="card-body">
-          <h5 class="card-title" id="this2">DAY</h5>
-          <i class="id2"></i>
-          <p class="card-texts" id="day2"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card" >
-        <div class="card-body">
-          <h5 class="card-title" id="this3">DAY</h5>
-          <i class="id3"></i>
-          <p class="card-texts" id="day3"></p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card" >
-        <div class="card-body">
-          <h5 class="card-title" id="this4">DAY</h5>
-          <i class="id4"></i>
-          <p class="card-texts" id="day4"></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="./assets/index.js"></script>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="./assets/index.js"></script>
 </body>
 </html>
